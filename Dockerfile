@@ -28,6 +28,8 @@ RUN cd /tmp \
   \
   && echo "==== Done ==="
 
+COPY docker /
+
 VOLUME ["/etc/zabbix/"]
 
 EXPOSE 10050
