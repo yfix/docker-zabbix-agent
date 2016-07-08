@@ -28,10 +28,12 @@ RUN cd /tmp \
   \
   && echo "==== Done ==="
 
+USER zabbix
+
 COPY docker /
 
 VOLUME ["/etc/zabbix/"]
 
 EXPOSE 10050
 
-ENTRYPOINT ["/usr/sbin/zabbix_agentd"]
+ENTRYPOINT ["/usr/sbin/zabbix_agentd","-f"]
